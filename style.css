@@ -9,8 +9,12 @@
     padding: 0;
     margin: 0;
     font-family: kepolu, sans-serif;
-    font-size: clamp(20px, calc(17px + 0.3vw), 23px);
+    font-size: inherit;
     letter-spacing: 1px;
+}
+
+html{
+    font-size: clamp(20px, calc(17px + 0.3vw), 23px);
 }
 
 :root {
@@ -23,17 +27,30 @@
 body {
     display: flex;
     height: 100vh;
-    min-height: 625px;
+    min-height: 800px;
 }
 
 .hero {
     background: url("assets/compass.jpg") center center/cover no-repeat;
     width: 300px;
-    height: 100vh;
-    font-family: virginity, sans-serif;
+    height: 100%;
     position: relative;
     flex-grow: 1;
     min-width: 460px;
+}
+
+main {
+    flex: 3;
+    background: url("assets/water.jpg") center center/cover no-repeat;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 0 100px;
+    color: var(--main-color);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    min-width: 605px;
 }
 
 main::before{
@@ -44,24 +61,10 @@ main::before{
     box-shadow: 0 0 10px 8px black;
 }
 
-
-main {
-    flex: 2;
-    background: url("assets/water.jpg") center center/cover no-repeat;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    padding: 0 100px;
-    color: var(--main-color);
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-}
-
 form {
     display: flex;
     flex-direction: column;
-    width: clamp(510px, 50vw, 600px);
+    width: clamp(528px, 50vw, 600px);
 }
 
 label {
@@ -86,23 +89,27 @@ h1 {
     text-align: center;
 }
 
+label{
+    position: relative;
+    margin-bottom: 30px;
+    margin-left: -5px;
+}
+
 label > span {
     margin-bottom: 10px;
     min-width: 210px;
-    font-size: clamp(16px, calc(16px + 0.3vw), 21px)
+    font-size: clamp(20px, 1vw, 21px)
 }
 
 label > input {
     background-color: transparent;
-    margin-bottom: 60px;
-    margin-left: -5px;
     border-radius: 8px;
     border-top: 1px solid transparent;
     border-right: 1px solid transparent;
     border-left: 1px solid transparent;
     border-bottom: 1px solid var(--main-color);
     text-indent: 15px;
-    font-size: clamp(16px, calc(16px + 0.3vw), 20px);
+    font-size: clamp(19px, 1vw, 20px);
     color: var(--input-color);
 }
 
@@ -117,7 +124,7 @@ input:focus, input:hover{
 
 button {
     color: var(--button-b-color);
-    border: 1px solid var(--button-b-color);
+    border: 1px solid transparent;
     background-color: dodgerblue;
     border-radius: 6px;
     padding: 10px 13px 7px 15px;
